@@ -1,10 +1,14 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors"); // Import CORS
 
 const app = express();
 const PORT = 9000;
 
 app.use(express.json());
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Route to fetch nearby hospitals
 app.get("/nearby-hospitals", async (req, res) => {
@@ -44,25 +48,3 @@ app.get("/nearby-hospitals", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
